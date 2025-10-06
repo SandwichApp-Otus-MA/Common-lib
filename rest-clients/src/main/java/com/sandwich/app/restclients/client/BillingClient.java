@@ -1,8 +1,8 @@
-package com.sandwich.app.restclients.model;
+package com.sandwich.app.restclients.client;
 
-import com.sandwich.app.models.model.billing.user.UserAccountDto;
 import com.sandwich.app.models.model.billing.payment.PaymentRequest;
 import com.sandwich.app.models.model.billing.payment.PaymentResponse;
+import com.sandwich.app.models.model.billing.user.UserAccountDto;
 import com.sandwich.app.restclients.configuration.RestClientFactory;
 import com.sandwich.app.restclients.properties.BillingProperties;
 import org.springframework.http.HttpStatusCode;
@@ -31,6 +31,15 @@ public class BillingClient extends AbstractClient<BillingProperties> {
             .uri(properties.getEndpoints().getDeposit(), uriBuilder -> uriBuilder
                 .queryParam("amount", amount)
                 .build(userId))
+            .retrieve()
+            .onStatus(HttpStatusCode::isError, this::handleError)
+            .toBodilessEntity();
+    }
+
+    public void refund(UUID userId, UUID paymentId) {
+        restClient
+            .post()
+            .uri(properties.getEndpoints().getDeposit(), userId, paymentId)
             .retrieve()
             .onStatus(HttpStatusCode::isError, this::handleError)
             .toBodilessEntity();

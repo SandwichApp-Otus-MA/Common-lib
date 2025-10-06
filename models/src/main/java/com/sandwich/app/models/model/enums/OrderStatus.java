@@ -1,0 +1,14 @@
+package com.sandwich.app.models.model.enums;
+
+public enum OrderStatus {
+    PENDING,
+    PAYMENT_PROCESSING,
+    PAYMENT_COMPLETED,
+    PAYMENT_FAILED,
+    RESTAURANT_ACCEPTED,
+    RESTAURANT_REJECTED,
+    DELIVERY_ASSIGNED,
+    DELIVERY_COMPLETED,
+    COMPLETED,
+    CANCELLED
+}

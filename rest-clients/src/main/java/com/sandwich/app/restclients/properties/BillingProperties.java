@@ -16,6 +16,7 @@ public class BillingProperties implements ClientProperties {
     public static class Endpoints {
         private String create = "/v1/user-account/create";
         private String deposit = "/v1/user-account/deposit/{id}";
+        private String refund = "/v1/payment/refund/{billingId}/{orderId}";
         private String createPayment = "/v1/payment/create";
         private String checkStatus = "/v1/payment/check-status/{id}";
     }

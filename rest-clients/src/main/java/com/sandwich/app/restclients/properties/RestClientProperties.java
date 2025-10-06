@@ -15,4 +15,13 @@ public class RestClientProperties {
 
     @NestedConfigurationProperty
     private BillingProperties billing;
+
+    @NestedConfigurationProperty
+    private DeliveryProperties delivery;
+
+    @NestedConfigurationProperty
+    private OrderProperties order;
+
+    @NestedConfigurationProperty
+    private RestaurantProperties restaurant;
 }

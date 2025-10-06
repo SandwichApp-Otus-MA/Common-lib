@@ -1,4 +1,4 @@
-package com.sandwich.app.restclients.model;
+package com.sandwich.app.restclients.client;
 
 import com.sandwich.app.restclients.configuration.RestClientFactory;
 import com.sandwich.app.models.exception.ClientInvokeException;
