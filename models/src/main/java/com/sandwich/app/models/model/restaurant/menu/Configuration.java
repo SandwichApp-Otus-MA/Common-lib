@@ -1,5 +1,7 @@
 package com.sandwich.app.models.model.restaurant.menu;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -8,11 +10,9 @@ import lombok.experimental.FieldNameConstants;
 
 import java.math.BigDecimal;
 
-@Getter
-@Setter
+@Data
 @Accessors(chain = true)
-@FieldNameConstants
-@NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Configuration {
     private BigDecimal price;
     private String size;

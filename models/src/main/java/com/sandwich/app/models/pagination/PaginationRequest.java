@@ -1,7 +1,5 @@
-package com.sandwich.app.models.model.user;
+package com.sandwich.app.models.pagination;
 
-import com.sandwich.app.models.pagination.Pagination;
-import com.sandwich.app.models.pagination.Sorting;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -11,8 +9,9 @@ import java.util.Optional;
 
 @Data
 @Accessors(chain = true)
-public class UserSearchRequest {
-    private UserFilter filter;
+public class PaginationRequest<T> {
+
+    private T filter;
 
     private Pagination pagination;
 

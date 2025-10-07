@@ -1,5 +1,6 @@
 package com.sandwich.app.models.model.order;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.sandwich.app.models.model.enums.OrderStatus;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
@@ -14,6 +15,7 @@ import java.util.UUID;
 
 @Data
 @Accessors(chain = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class OrderDto {
     private UUID id;
     @NotNull
