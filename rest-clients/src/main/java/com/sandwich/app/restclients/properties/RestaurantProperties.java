@@ -15,6 +15,7 @@ public class RestaurantProperties implements ClientProperties {
     @Setter
     public static class Endpoints {
         private String create = "/v1/restaurant/create";
+        private String createOrder = "/v1/restaurant/create/order";
         private String cancel = "/v1/restaurant/cancel/{restaurantId}/{orderId}";
     }
 }

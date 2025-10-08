@@ -13,10 +13,10 @@ public class RestaurantClient extends AbstractClient<RestaurantProperties> {
         super(properties, restClientFactory);
     }
 
-    public RestaurantOrderResponse create(RestaurantOrderRequest restaurantOrderDto) {
+    public RestaurantOrderResponse createOrder(RestaurantOrderRequest restaurantOrderDto) {
         return restClient
             .post()
-            .uri(properties.getEndpoints().getCreate())
+            .uri(properties.getEndpoints().getCreateOrder())
             .body(restaurantOrderDto)
             .retrieve()
             .body(RestaurantOrderResponse.class);

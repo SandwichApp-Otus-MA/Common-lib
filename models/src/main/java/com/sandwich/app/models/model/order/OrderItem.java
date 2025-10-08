@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 @Data
@@ -11,4 +12,7 @@ import java.util.UUID;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OrderItem {
     private UUID id;
+    private String name;
+    private Float quantity;
+    private BigDecimal price;
 }
