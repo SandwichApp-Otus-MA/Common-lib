@@ -7,8 +7,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
-import java.util.UUID;
-
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
@@ -17,11 +15,9 @@ public class ProductDto extends DomainObjectDto {
 
     private String name;
 
-    private Integer count;
-
     private MeasureUnit measureUnit;
 
     private ProductInfoDto productInfo;
 
-    private UUID restaurantId;
+    private String description;
 }

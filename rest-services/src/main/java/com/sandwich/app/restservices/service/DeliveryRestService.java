@@ -2,6 +2,7 @@ package com.sandwich.app.restservices.service;
 
 import com.sandwich.app.models.model.delivery.DeliveryDto;
 import com.sandwich.app.models.model.delivery.DeliveryFilter;
+import com.sandwich.app.models.model.event.NotificationEvent;
 import com.sandwich.app.models.pagination.PageData;
 import com.sandwich.app.models.pagination.PaginationRequest;
 import com.sandwich.app.restclients.client.DeliveryClient;
@@ -28,5 +29,9 @@ public class DeliveryRestService {
     public void cancel(UUID deliveryId, UUID orderId) {
         log.info("Отмена доставки deliveryId: {}, orderId: {}", deliveryId, orderId);
         client.cancel(deliveryId, orderId);
+    }
+
+    public void notify(NotificationEvent event) {
+        client.notify(event);
     }
 }

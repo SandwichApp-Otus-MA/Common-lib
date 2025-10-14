@@ -2,6 +2,7 @@ package com.sandwich.app.restclients.client;
 
 import com.sandwich.app.models.model.delivery.DeliveryDto;
 import com.sandwich.app.models.model.delivery.DeliveryFilter;
+import com.sandwich.app.models.model.event.NotificationEvent;
 import com.sandwich.app.models.pagination.PageData;
 import com.sandwich.app.models.pagination.PaginationRequest;
 import com.sandwich.app.restclients.configuration.RestClientFactory;
@@ -39,6 +40,14 @@ public class DeliveryClient extends AbstractClient<DeliveryProperties> {
         restClient
             .post()
             .uri(properties.getEndpoints().getCancel(), deliveryId, orderId)
+            .retrieve()
+            .toBodilessEntity();
+    }
+
+    public void notify(NotificationEvent event) {
+        restClient
+            .post()
+            .uri(properties.getEndpoints().getNotify(), event)
             .retrieve()
             .toBodilessEntity();
     }
